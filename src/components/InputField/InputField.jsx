@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import style from "./InputField.module.scss";
+import { useFormContext } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 const InputField = ({
   className = null,
   type = "text",
   name,
   placeholder = "",
-  value,
-  setValue,
+  // setValue,
   disabled = false,
 }) => {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+  // console.log(errors);
   return (
     <label>
       <input
@@ -17,10 +23,14 @@ const InputField = ({
         className={clsx(style.inputField, className)}
         name={name}
         placeholder={placeholder}
-        value={value}
         disabled={disabled}
-        onChange={(e) => setValue(e.target.value)}
         autoComplete="off"
+        {...register(name)}
+      />
+      <ErrorMessage
+        errors={errors}
+        name={name}
+        render={({ message }) => <p className={clsx(style.error)}>{message}</p>}
       />
     </label>
   );

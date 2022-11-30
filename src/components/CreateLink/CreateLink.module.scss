@@ -6,7 +6,7 @@
 }
 .content_item {
   display: grid;
-  grid-template-columns: 100px 250px 1fr 100px;
+  grid-template-columns: 100px 1fr 1fr 100px;
   align-items: center;
 
   column-gap: 5px;
@@ -45,7 +45,7 @@
 
 .container .heading {
   display: grid;
-  grid-template-columns: 100px 250px 1fr 100px;
+  grid-template-columns: 100px 1fr 1fr 100px;
   align-items: center;
   background-color: #1f2739;
 

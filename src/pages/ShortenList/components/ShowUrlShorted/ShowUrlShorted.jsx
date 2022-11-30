@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import style from "./ShowUrlShorted.module.scss";
-import InputField from "../../../../components/InputField/InputField";
-const ShowUrlShorted = ({ linkShorted, showMyUrl, shortedAnother }) => {
+import InputFieldShow from "../../../../components/InputField/InputFieldShow";
+const ShowUrlShorted = ({ linkShorted, shortedAnother }) => {
   const [isShow, setIsShow] = useState(false);
-  // console.log(linkShorted);
   const handleClickCopy = (e) => {
     navigator.clipboard.writeText(linkShorted.shortLink);
     setIsShow(true);
@@ -12,16 +11,17 @@ const ShowUrlShorted = ({ linkShorted, showMyUrl, shortedAnother }) => {
       setIsShow(false);
     }, 2000);
   };
+
   return (
     <>
       <span> Your Long URL</span>
-      <InputField
+      <InputFieldShow
         className={clsx(style.input)}
         // name="shortenUrl"
         value={linkShorted.linkToRedirect}
       />
       <span>TinyURL</span>
-      <InputField
+      <InputFieldShow
         className={clsx(style.input)}
         // name="shortenUrl"
         value={linkShorted.shortLink}
