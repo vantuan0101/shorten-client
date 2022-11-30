@@ -1,0 +1,29 @@
+@import "../../assets/scss/import";
+.main {
+  padding: 0 25px;
+  margin-top: 10px;
+}
+.contain {
+}
+.info {
+}
+.link {
+  margin-top: 15px;
+}
+.linkTab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  font-size: 17px;
+  margin: 10px 0;
+  & > p {
+    cursor: pointer;
+    background-color: wheat;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+  }
+}

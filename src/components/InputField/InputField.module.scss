@@ -1,0 +1,18 @@
+@import "../../assets/scss/import";
+
+.inputField {
+  height: $login-form-el-height;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: $login-form-el-height;
+  font-size: $font-size-16;
+  color: #000000;
+  background-color: #f1f1f1;
+  outline: none;
+  padding: 0 $spacing-2x;
+  cursor: text;
+  border: none;
+  border-radius: $border-radius-1x;
+
+  transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
+}

@@ -1,0 +1,59 @@
+@mixin tablet-pro-desktop {
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+/* desktop  */
+@mixin desktop {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+/* md -tablet to desktop  */
+@mixin md-tablet-desktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+/* mobile-md-tablet  */
+@mixin mobile-md-tablet {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+// sm-tablet to md tablet
+@mixin tablet {
+  @media (min-width: 576px) and (max-width: 991px) {
+    @content;
+  }
+}
+/* md-tablet  */
+@mixin md-tablet {
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+/* mobile-sm-tablet  */
+@mixin mobile-sm-tablet {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+/* sm-tablet  */
+@mixin sm-tablet {
+  @media (min-width: 576px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+/* mobile  */
+@mixin mobile {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
