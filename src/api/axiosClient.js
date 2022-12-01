@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3001/api/v1/";
+axios.defaults.baseURL = `${process.env.REACT_APP_API_URL}`;
 // axios.defaults.baseURL = "https://shorten-web.up.railway.app/api/v1";
 axios.defaults.headers.common["Content-Type"] = "application/json";
 axios.defaults.timeout = 60000;

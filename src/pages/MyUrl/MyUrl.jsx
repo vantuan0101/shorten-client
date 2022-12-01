@@ -4,6 +4,7 @@ import clsx from "clsx";
 import style from "./MyUrl.module.scss";
 import CreateLink from "../../components/CreateLink/CreateLink";
 import shortenApi from "../../api/shortenApi";
+import { Outlet } from "react-router-dom";
 const MyUrl = () => {
   const [linkList, setLinkList] = useState([]);
   const [allLinkList, setAllLinkList] = useState(null);
@@ -95,9 +96,10 @@ const MyUrl = () => {
               All link has been created
             </p>
           </div>
-          {isActivate.tab1 ? <CreateLink data={linkList?.createdLink} /> : null}
+          <Outlet />
+          {/* {isActivate.tab1 ? <CreateLink data={linkList?.createdLink} /> : null}
           {isActivate.tab2 ? <CreateLink data={linkList?.clickedLink} /> : null}
-          {isActivate.tab3 ? <CreateLink data={allLinkList} /> : null}
+          {isActivate.tab3 ? <CreateLink data={allLinkList} /> : null} */}
         </ul>
       </ul>
     </div>

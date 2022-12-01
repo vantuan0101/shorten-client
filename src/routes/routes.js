@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
+import CreateLink from "../components/CreateLink/CreateLink";
 import ErrorPage from "../components/error-page";
 import Login from "../pages/account/Login/Login";
 import Register from "../pages/account/Register/Register";
@@ -19,6 +20,12 @@ const router = createBrowserRouter([
       {
         path: "/my-url",
         element: <MyUrl />,
+        children: [
+          {
+            path: "/my-url",
+            element: <CreateLink />,
+          },
+        ],
       },
     ],
   },

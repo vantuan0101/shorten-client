@@ -179,7 +179,7 @@ export default function Login() {
             <div className="login-social">
               <button className="login-btn login-social-c logo-facebook">
                 <a
-                  href="http://localhost:3001/api/v1/auth/facebook"
+                  href={`${process.env.REACT_APP_API_URL}/auth/facebook`}
                   // href="https://shorten-web.up.railway.app/api/v1/auth/facebook"
                 >
                   <FaFacebookF />
@@ -189,7 +189,7 @@ export default function Login() {
               <button className="login-btn login-social-c logo-google">
                 <a
                   // href="https://shorten-web.up.railway.app/api/v1/auth/google"
-                  href="http://localhost:3001/api/v1/auth/google"
+                  href={`${process.env.REACT_APP_API_URL}/auth/google`}
                 >
                   <FcGoogle />
                   Google

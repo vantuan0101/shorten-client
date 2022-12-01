@@ -1,7 +1,20 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import clsx from "clsx";
 import style from "./CreateLink.module.scss";
-const CreateLink = ({ data }) => {
+import shortenApi from "../../api/shortenApi";
+import queryString from "query-string";
+const CreateLink = () => {
+  const parsed = queryString.parse(window.location.search);
+  console.log(parsed);
+  const [link, setLink] = useState([]);
+  useEffect(() => {
+    const res = async () => {
+      const data = await shortenApi.getAll();
+      setLink(data);
+    };
+    res();
+  }, []);
+  // console.log(link);
   return (
     <>
       <div className={clsx(style.container)}>
@@ -23,15 +36,15 @@ const CreateLink = ({ data }) => {
         </div>
         <div className={clsx(style.content)}>
           <div className={clsx(style.content_item)}>
-            {data?.map((item) => (
-              <Fragment key={item._id}>
+            {link?.map((item) => (
+              <div className={clsx(style.content_item_contain)} key={item._id}>
                 <div className={clsx(style.item)}>{item._id}</div>
                 <div className={clsx(style.item)}>{item.linkToRedirect}</div>
                 <div className={clsx(style.item)}>{item.shortLink}</div>
                 <div className={clsx(style.item)}>
-                  {item.count ? item.count : 0}
+                  {item.countClick ? item.countClick : 0}
                 </div>
-              </Fragment>
+              </div>
             ))}
           </div>
         </div>
