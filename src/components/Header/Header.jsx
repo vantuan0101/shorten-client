@@ -37,7 +37,9 @@ const Header = () => {
               </div>
               <ul className={clsx(style.menu)}>
                 <li onClick={() => logoutUser()}>Logout</li>
-                <li onClick={() => (window.location.href = "/my-url")}>
+                <li
+                  onClick={() => (window.location.href = "/my-url/create-link")}
+                >
                   My URL
                 </li>
               </ul>

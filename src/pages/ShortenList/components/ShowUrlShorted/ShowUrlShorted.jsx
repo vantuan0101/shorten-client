@@ -38,7 +38,7 @@ const ShowUrlShorted = ({ linkShorted, shortedAnother }) => {
       <div className={clsx(style.button)}>
         <button
           className={clsx(style.buttonShort)}
-          onClick={() => (window.location.href = "/my-url")}
+          onClick={() => (window.location.href = "/my-url/create-link")}
         >
           My URL
         </button>

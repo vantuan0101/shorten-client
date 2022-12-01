@@ -1,8 +1,8 @@
 import axiosClient from "./axiosClient";
 const shortenApi = {
-  getAll(params) {
-    const url = "shorten-link";
-    return axiosClient.get(url, params);
+  getAll(queryOptions) {
+    const url = `shorten-link?${queryOptions}`;
+    return axiosClient.get(url);
   },
   getShortenById(id) {
     const url = `shorten-link/${id}`;

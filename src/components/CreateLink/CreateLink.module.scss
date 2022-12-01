@@ -82,9 +82,10 @@
   transition-timing-function: line;
 }
 
-// @media (max-width: 800px) {
-//   .content_item td:nth-child(4),
-//   .container th:nth-child(4) {
-//     display: none;
-//   }
-// }
+.optionTool {
+  //   display: flex;
+  margin: 10px 0;
+  //   & > div {
+  //     margin-right: 5px;
+  //   }
+}

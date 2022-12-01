@@ -16,14 +16,17 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <ShortenList />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/my-url",
         element: <MyUrl />,
+        errorElement: <ErrorPage />,
         children: [
           {
-            path: "/my-url",
+            path: "/my-url/:showLink",
             element: <CreateLink />,
+            errorElement: <ErrorPage />,
           },
         ],
       },
