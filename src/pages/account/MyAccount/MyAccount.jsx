@@ -5,7 +5,7 @@ import UserAccount from "./UserAccount/UserAccount";
 
 const MyAccount = () => {
   const user = JSON.parse(window.localStorage.getItem("user"));
-  console.log(user);
+  // console.log(user);
   useEffect(() => {
     if (!user) {
       return (window.location.href = "/login");

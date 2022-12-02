@@ -42,13 +42,13 @@ const AdminAccount = () => {
   };
   const handleDisableUser = async (id) => {
     try {
-      const res = await appApi.disableUser({ id });
+      await appApi.disableUser({ id });
       window.location.reload();
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(user);
+  // console.log(user);
   return (
     <div className={clsx(style.main)}>
       {action.isEdit ? (
