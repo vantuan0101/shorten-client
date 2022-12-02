@@ -11,6 +11,13 @@ const ShowUrlShorted = ({ linkShorted, shortedAnother }) => {
       setIsShow(false);
     }, 2000);
   };
+  const handleLinkMyUrl = () => {
+    const { user } = JSON.parse(window.localStorage.getItem("user"));
+    if (!user) {
+      return (window.location.href = "/login");
+    }
+    return (window.location.href = "/my-url/create-link");
+  };
 
   return (
     <>
@@ -38,7 +45,7 @@ const ShowUrlShorted = ({ linkShorted, shortedAnother }) => {
       <div className={clsx(style.button)}>
         <button
           className={clsx(style.buttonShort)}
-          onClick={() => (window.location.href = "/my-url/create-link")}
+          onClick={() => handleLinkMyUrl()}
         >
           My URL
         </button>

@@ -1,0 +1,40 @@
+.main {
+  width: 80%;
+  margin: 10px auto;
+}
+.header,
+.data {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+  align-items: center;
+  & > div {
+    padding-left: 10px;
+  }
+}
+.header {
+  height: 50px;
+  background-color: antiquewhite;
+  border: 1px solid gray;
+}
+.data {
+  padding: 10px 0;
+  border: 1px solid;
+}
+.button {
+  display: flex;
+  justify-content: space-evenly;
+  & > button {
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+    cursor: pointer;
+    border: none;
+    background-color: #303030;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: white;
+  }
+  & > button:hover {
+    opacity: 0.8;
+  }
+}

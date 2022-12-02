@@ -118,7 +118,6 @@ export default function Login() {
         username: userValue,
         password: passValue,
       });
-      console.log(resultLogin);
       if (resultLogin) {
         trigSuccessInput.fire();
         window.localStorage.setItem("user", JSON.stringify(resultLogin));

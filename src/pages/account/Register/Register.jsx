@@ -34,7 +34,8 @@ export default function Register() {
       alignment: Alignment.Center,
     }),
   });
-  const [nameUser, setNameUser] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [userValue, setUserValue] = useState("");
   const [passValue, setPassValue] = useState("");
   const [inputLookMultiplier, setInputLookMultiplier] = useState(0);
@@ -87,9 +88,18 @@ export default function Register() {
     const numChars = newVal.length;
     numLookInput.value = numChars * inputLookMultiplier;
   };
-  const onNameUserChange = (e) => {
+  const onFirstNameChange = (e) => {
     const newVal = e.target.value;
-    setNameUser(newVal);
+    setFirstName(newVal);
+    if (!isCheckingInput.value) {
+      isCheckingInput.value = true;
+    }
+    const numChars = newVal.length;
+    numLookInput.value = numChars * inputLookMultiplier;
+  };
+  const onLastNameChange = (e) => {
+    const newVal = e.target.value;
+    setLastName(newVal);
     if (!isCheckingInput.value) {
       isCheckingInput.value = true;
     }
@@ -112,7 +122,8 @@ export default function Register() {
       e.preventDefault();
       setLoginButtonText("Waiting...");
       const resultRegister = await authApi.register({
-        name: nameUser,
+        firstName,
+        lastName,
         username: userValue,
         password: passValue,
       });
@@ -144,15 +155,27 @@ export default function Register() {
           </div>
           <div className="form-container">
             <form onSubmit={onSubmit} autoComplete="off">
-              <label>
+              <label className="nameUser">
                 <input
                   type="text"
                   className="form-username"
-                  name="name"
-                  placeholder="Name"
+                  name="firstName"
+                  placeholder="firstName"
                   onFocus={onUsernameFocus}
-                  value={nameUser}
-                  onChange={onNameUserChange}
+                  value={firstName}
+                  onChange={onFirstNameChange}
+                  onBlur={() => (isCheckingInput.value = false)}
+                  ref={inputRef}
+                  autoComplete="off"
+                />
+                <input
+                  type="text"
+                  className="form-username"
+                  name="lastName"
+                  placeholder="lastName"
+                  onFocus={onUsernameFocus}
+                  value={lastName}
+                  onChange={onLastNameChange}
                   onBlur={() => (isCheckingInput.value = false)}
                   ref={inputRef}
                   autoComplete="off"

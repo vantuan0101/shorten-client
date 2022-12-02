@@ -8,7 +8,6 @@ import ShowUrlShorted from "./components/ShowUrlShorted/ShowUrlShorted";
 const ShortenList = () => {
   const [linkShorted, setLinkShorted] = useState(false);
   const onSubmit = async ({ fullLink, alias }) => {
-    console.log({ fullLink, alias });
     try {
       const url = await shortenApi.addShorten({
         linkToRedirect: fullLink,

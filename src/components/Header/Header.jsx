@@ -42,6 +42,9 @@ const Header = () => {
                 >
                   My URL
                 </li>
+                <li onClick={() => (window.location.href = "/my-account")}>
+                  My Account
+                </li>
               </ul>
             </div>
           </div>

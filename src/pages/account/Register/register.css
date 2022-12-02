@@ -57,7 +57,18 @@
 
   transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
 }
-
+.nameUser {
+  display: flex !important;
+}
+.nameUser input {
+  width: 50%;
+}
+.nameUser input:first-child {
+  margin-right: 5px;
+}
+.nameUser input:last-child {
+  margin-left: 5px;
+}
 .login-btn {
   display: block;
   border: none;
@@ -101,7 +112,7 @@
   width: 150px;
 }
 .login-social-c span,
-a {
+.login-social-c a {
   display: flex;
   align-self: center;
   justify-content: center;
@@ -110,8 +121,7 @@ a {
   text-decoration: none;
   color: #ffffff;
 }
-.login-social-c span,
-a > svg {
+.login-social-c svg {
   margin-right: 10px;
 }
 .logo-facebook:hover {
