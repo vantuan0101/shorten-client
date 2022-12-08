@@ -10,11 +10,15 @@ const Home = () => {
   useEffect(() => {
     const res = async () => {
       try {
-        await appApi.checkDisableUser();
+        const checkDisable = await appApi.checkDisableUser();
+        if (checkDisable.disable === true) {
+          await authApi.logout(user._id);
+          window.localStorage.removeItem("user");
+          navigate("/expired");
+        }
+        console.log(checkDisable);
       } catch (error) {
-        await authApi.logout(user._id);
-        window.localStorage.removeItem("user");
-        navigate("/expired");
+        console.log(error);
       }
     };
     if (user) {
