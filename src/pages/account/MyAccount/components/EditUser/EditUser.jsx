@@ -3,6 +3,7 @@ import clsx from "clsx";
 import style from "./EditUser.module.scss";
 import userApi from "../../../../../api/userApi";
 const EditUser = ({ user, handleEdit }) => {
+  console.log(user);
   const [dataUser, setDataUser] = useState({
     firstName: user.firstName || "",
     lastName: user.lastName || "",

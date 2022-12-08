@@ -1,11 +1,11 @@
 import axiosClient from "./axiosClient";
 const appApi = {
   getAllLinkOfUsers(queryOptions) {
-    const url = `link/users?${queryOptions}`;
+    const url = `users/populate?${queryOptions}`;
     return axiosClient.get(url);
   },
   getAllLinkOfUserById(params, queryOptions) {
-    const url = `link/user/${params}?${queryOptions}`;
+    const url = `users/populate/${params}?${queryOptions}`;
     return axiosClient.get(url);
   },
   checkDisableUser() {
