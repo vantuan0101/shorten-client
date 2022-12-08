@@ -16,7 +16,7 @@ const Home = () => {
           window.localStorage.removeItem("user");
           navigate("/expired");
         }
-        console.log(checkDisable);
+        // console.log(checkDisable);
       } catch (error) {
         console.log(error);
       }
